@@ -1,0 +1,2401 @@
+
+
+<link rel='stylesheet' title='main' href='SPScreenExt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='print.css' type='text/css'>
+
+
+
+<form id="mcForm" method="post" action=""><!-- form begin -->
+	<div class="container"><!-- container begin -->
+		<div class="formHeader"><!-- formHeader begin -->
+			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
+				<center><div id="divFormLogo" class=""><img src="#mastercontrol.imagelink(logo.jpg)#" width="200px" height="70px" alt="Company Logo"/></div></center>
+					<center><font size="4" style="font-family:Times New Roman;">DEVIATION FORM</font></center><br>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
+					<tr>
+						<td colspan="5">&nbsp;</td>
+					</tr><!-- process name end -->
+					<tr><!-- header first row begin -->
+						<td width="15%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Deviation Number</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.creatorname">Creator Name</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.created">Date Created</label></td>
+						<td width="5%">&nbsp;</td>
+					</tr><!-- header first row end -->
+					<tr><!-- header second row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="Tracking Number" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.creatorname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Creator Name" title="Creator Name" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.created" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Date Created" title="Created Date" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header second row end -->
+					
+					<tr><!-- header fifth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="1"><label for="txtOriginalDueDate_date">Original Due Date:</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header fifth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="1">
+							<input id="txtOriginalDueDate_date" type="text" class="readonly textfield textfield35" alt="Original Due Date" readonly="readonly" title="Original Due Date" />
+							
+							<input id="btnOriginalDueDate" type="button" class="calendarImage" title="original Due Date" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="1">
+							<select id="mastercontrol.task.routes" class="hide" title="Deviation Extension Request"></select>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan="1">
+							<input id="mastercontrol.task.launch" type="button" class="formButton140" alt="Launch Extension Request" title="Click to Launch Extension" value="Launch Extension"/>
+						</td>
+					</tr><!-- header sixth row end -->
+					
+					<tr ><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="1">
+							<input id="mastercontrol.links.add.Deviation Extension" type="button" class="formButton140" title="Click to View Extension" value="View Extensions" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+						</td>
+						<td colspan="3">
+							<select id="mastercontrol.links.Deviation Extension" size="5" class="textfield" alt="Dev Extension Request" title="Deviation Extension Forms" onchange="extensionsCount()"></select>
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="1">
+							<label for="txtNewDueDate_date">New Due Date:
+							<input id="txtNewDueDate_date" type="text" class="textfield textfield35" alt="New Due Date" title="New Due Date" readonly="readonly"/>
+							<input id="btnNewDueDateCalendar" type="button" class="calendarImage" title="New Due Date"   />
+						</td>
+						<td colspan="1">	
+						</td>
+						<td>	
+							<input id="btnAddNewDueDate" type="button" class="formButton115" alt="Add" title="Add" value="Add" onclick="addDueDate()" />
+							<input id="btnRemoveNewDueDate" type="button" class="formButton115" alt="Remove" title="Remove" value="Remove" onclick="removeDueDate()" />
+							
+						</td>
+						<td colspan="1">	
+						</td>
+						<td>
+							<select id="cmbNewDueDate" size="5" class="selectfield" title="New Due Dates"></select>	
+						</td>
+						<div id="divDueDates" class="hide"><!-- hidden title fields div begin -->
+							<input id="txtDueDatesPg1" type="text"  alt="List of Due Dates" />
+							<input id="txtDueDates" type="text"  alt="Due Dates List" />
+						</div>	
+					</tr><!-- header sixth row end -->
+					<tr>
+					<td>&nbsp;</td>
+					<td class="TopLabel" colspan="5" color="red">
+					<label for="txtNewDueDate">* Please click Add button to add date to the list</label>
+					</td>
+					</tr>	
+				</table>
+				
+			</div><!-- page001 end -->
+		</div><!-- formHeader end -->
+		
+
+		<div class="formBody"><!-- formBody begin -->
+			<div class="tabber" id="formTabs"><!-- formTabs begin -->
+				<div id="divDeviationInitiationTab" class="tabbertab" title="Deviation Initiation"><!-- Deviation Initiation tabbertab begin -->
+					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
+					<span class="tabHeading">Deviation Initiation</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Initiation</div>
+						
+							<div id="divtxtDevTitle" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtTitle" class="reqdLabel">* Deviation Title</label>
+								</div>
+								<div class="leftField">
+									<div class="formField100">
+										<input id="txtTitle" type="text" class="headerTextfield required" alt="H_Title" title="Deviation Title" />
+									</div>
+									<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
+										<input type="text" id="mastercontrol.form.title" alt="Task Title" title="Form Title"/>
+									</div><!-- hidden title fields div end -->
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divmastercontrol.dataset.recordids.Product List" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="divmastercontrol.dataset.recordids.Product List">Product</label>
+								</div>
+								<div class="leftField">
+								<div class="formField20">
+										<select  id="mastercontrol.dataset.recordids.Product List" size ="10" class="selectfield" title="Product"></select>
+								</div>
+								
+									<div class="subLabel">
+										<input id="btnAddProduct1" type="button" class="formButton115" alt="Add" title="Add Product to List" value="Add" onclick="addProduct()"/>
+										<input id="btnRemoveProduct1" type="button" class="formButton115" alt="Remove" title="Remove Product from List" value="Remove" onclick="removeFromList(this.id)"/>
+									</div>
+									<div class="formField20">	
+										<select id="cmbProduct" size="10" class="selectfield" title="Products"></select>
+									</div>
+								
+								<div id="divProduct" class="hide"><!-- hidden product fields div begin -->
+									<input type="text" id="txtProduct" alt="List of Products" />
+									<input type="text" id="txtProductPg1" alt="Product List" />
+								</div>
+							
+							</div>	
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divmastercontrol.dataset.recordids.Department" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.Department" class="reqdLabel">* Department:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.Department" class="selectfield required" title="Department"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divmastercontrol.dataset.recordids.Functional Area" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.dataset.recordids.Functional Area" class="reqdLabel">*Functional Area:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.dataset.recordids.Functional Area" class="selectfield required" title="Functional Area"></select>
+									</div>	
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+
+							<div id="divType1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" class="reqdLabel">* Type:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField100">
+										
+										<input id="rbType1" name="rbType1" type="radio" class="radiobuttonfield required" alt="Deviation or Observation" title="Deviation or Observation" value="Deviation" />Deviation
+										<input id="rbType1" name="rbType1" type="radio" class="radiobuttonfield required" alt="Deviation or Observation" title="Deviation or Observation" value="Observation"  />Observation
+
+										<input id="rbType2" name="rbType2" type="radio" class="radiobuttonfield required" alt="GMP or GLP or GCP" title="GMP or GLP or GCP" value="GMP" style="margin-left:45px;" onclick="notifyUsers()"/>GMP
+										<input id="rbType2" name="rbType2" type="radio" class="radiobuttonfield required" alt="GMP or GLP or GCP" title="GMP or GLP or GCP" value="GLP" onclick="notifyUsers()"/>GLP
+										<input id="rbType2" name="rbType2" type="radio" class="radiobuttonfield required" alt="GMP or GLP or GCP" title="GMP or GLP or GCP" value="GCP" onclick="notifyUsers()"/>GCP
+										
+										<input id="rbType3" name="rbType3" type="radio" class="radiobuttonfield required" alt="Planned or Unplanned" title="Planned or Unplanned" value="Planned" style="margin-left:45px;" onclick="enableJustification()"/>Planned
+										<input id="rbType3" name="rbType3" type="radio" class="radiobuttonfield required" alt="Planned or Unplanned" title="Planned or Unplanned" value="Unplanned" onclick="enableJustification()"/>Unplanned
+									</div>
+													
+								</div>
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							<div id="divDocumentReference" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtDocumentReference">Document Reference:</label>
+								</div>
+								
+								<div class="leftField">
+									<table width="80%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											
+											<td width="21%" align="left" valign="top">
+												<input id="mastercontrol.links.add.Reference" type="button" class="formButton115" title="Click to View or Add Links" value="Document Reference" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.Reference">&nbsp;</label>
+												<select id="mastercontrol.links.Reference" size="5" multiple="multiple" class="listfield readonly" alt="Document Reference Links" title="References"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+														
+							<div id="divOtherVendor" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Vendor:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtOtherVendor" type="text" class="textfield" alt="Other Vendor" title="Vendor" />
+									</div>	
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+							<div id="divWhen" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtWhen_date">When:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtWhen_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="When" title="When Deviation Occurred" />
+										<input id="btnWhenCalendar" type="button" class="calendarImage" title="When Deviation Occurred" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtWhere">Where:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtWhere" type="text" class="textfield" alt="Where" title="Where Deviation Occurred" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divEventDescription" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtEventDescription" class="reqdLabel">* Event Description:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtEventDescription" class="textarea required" rows="30" cols="20" title="Event Description" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLotNumberAdd1_exclude" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLotNumberAdd1">Lot Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtLotNumberAdd1" type="text" class="textfield" alt="Lot Number" title="Lot Number Potentially Impacted" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddLotNumber1" type="button" class="formButton115" alt="Add" title="Add Lot Number to List" value="Add" onclick="addLotNumber()"/>
+										<input id="btnRemoveLotNumber1" type="button" class="formButton115" alt="Remove" title="Remove Lot Number from List" value="Remove" onclick="removeFromList(this.id)"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbLotNumbers1" size="10" class="selectfield" title="Lot Numbers List"></select>
+									</div>
+								</div>
+								<div id="divLotNumbers" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtLotNumberPg1" alt="List of Lot Numbers" />
+									<input type="text" id="txtLotNumbers" alt="Lot Numbers Added" />
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divAddStudyNumber1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtStudyNumberAdd1">Study Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtStudyNumberAdd1" type="text" class="textfield" alt="Study Number" title="Study Number Potentially Impacted" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddStudyNumber1" type="button" class="formButton115" alt="Add" title="Add Study Number to List" value="Add" onclick="addStudyNumber()"/>
+										<input id="btnRemoveStudyNumber1" type="button" class="formButton115" alt="Remove" title="Remove Study Number from List" value="Remove" onclick="removeFromList(this.id)"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbStudyNumbers1" size="10" class="selectfield" title="Study Numbers List"></select>
+									</div>
+								</div>
+								<div id="divStudyNumbers" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtStudyNumberPg1" alt="List of Study Number" />
+									<input type="text" id="txtStudyNumbers" alt="Study Numbers Added" />
+								</div><!-- hidden Study fields div end -->
+							</div>
+							<div class="clearBoth"></div>
+				
+							<div id="divClinicalSiteNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtClinicalSiteNumber">Clinical Site Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtClinicalSiteNumber" type="text" class="textfield" alt="Clinical Site Number" title="Clinical Site Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							
+							<div id="divEquipmentReference" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtEquipmentReference">Equipment Reference:</label>
+								</div>
+								
+								<div class="leftField">
+									<table width="80%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="left" valign="top">
+												<input id="mastercontrol.links.add.EquipmentReference" type="button" class="formButton115" title="Click to View or Add Links" value="Equipment Reference" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.EquipmentReference">&nbsp;</label>
+												<select id="mastercontrol.links.EquipmentReference" size="5" multiple="multiple" class="listfield readonly" alt="Equipment Reference Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divQCAssayTrackingNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtQCAssayTrackingNumber">QC Assay Tracking Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtQCAssayTrackingNumber" type="text" class="textfield" alt="QC Assay Tracking Number" title="QC Assay Tracking Number" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddAssay1" type="button" class="formButton115" alt="Add" title="Add QC Assay Tracking Number to List" value="Add" onclick="addAssayNumber()"/>
+										<input id="btnRemoveAssay1" type="button" class="formButton115" alt="Remove" title="Remove QC Assay Tracking Number from List" value="Remove" onclick="removeFromList(this.id)"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbAssayTracker" size="10" class="selectfield" title="QC Assay Tracking Numbers List"></select>
+									</div>
+								</div>
+								<div id="divAssayTrackNumbers" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtAssayNumberPg1" alt="List of Assay Tracking Numbers" />
+									<input type="text" id="txtAssayNumbers" alt="Assay Tracking Numbers Added" />
+								</div><!-- hidden Study fields div end -->
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divJustification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtJustification">Justification(if planned):</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtJustification" class="textarea" rows="15" cols="20" title="Justification" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divImmediateAction" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtImmediateAction" class="reqdLabel">* Immediate Action:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtImmediateAction" class="textarea required" rows="15" cols="20" title="Deviation Action" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divmastercontrol.task.mapped.routes" class="hide"><!-- hidden task mapped routes field -->
+								<select id="mastercontrol.task.mapped.routes" size="3" multiple="multiple" class="listfield" alt="Mapped Routes" title="Mapped Routes"></select>
+							</div>	
+							
+							<div id="divDeviationInitiationAttachments" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.deviationinitiationattachments" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.deviationinitiationattachments">&nbsp;</label>
+												<select id="mastercontrol.attachments.deviationinitiationattachments" size="3" multiple="multiple" class="listfield readonly" alt="Deviation Initiation Attachment Files" title="Deviation Initiation Attachment Files"></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.deviationinitiationattachments" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.deviationinitiationattachments">&nbsp;</label>
+												<select id="mastercontrol.links.deviationinitiationattachments" size="3" multiple="multiple" class="listfield readonly" alt="Deviation Initiation Attachment Links" title="Deviation Initiation Attachment Links"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+					
+						</div><!-- previous section end -->	
+					</div><!-- previous page end -->
+				</div><!-- previous tabber end -->
+				
+				<div id="divInitialImpactTab" class="tabbertab" title="Initial Impact"><!-- Initial Impact tabbertab begin -->
+					<div id="mcPage_003" class="mcPage"><!-- page 3 begin -->
+					<span class="tabHeading">Initial Impact</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Initial Impact</div>
+
+							<div id="divImpactAssessment" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtImpactAssessment" class="reqdLabel">* Impact Assessment:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtImpactAssessment" class="textarea required" rows="30" cols="20" title="Impact Assessment" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div id="divImpactAssessmentAttachmentsLinks" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.impactassessmentattachmentslinks" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.impactassessmentattachmentslinks">&nbsp;</label>
+												<select id="mastercontrol.attachments.impactassessmentattachmentslinks" size="3" multiple="multiple" class="listfield readonly" alt="Impact Assessment Attachment Files" title="Impact Assessment Attachment Files"></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.impactassessmentattachmentslinks" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.impactassessmentattachmentslinks">&nbsp;</label>
+												<select id="mastercontrol.links.impactassessmentattachmentslinks" size="3" multiple="multiple" class="listfield readonly" alt="Impact Assessment Link Files" title="Impact Assessment Link Files"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				
+				<div id="divRiskAssessmentTab" class="tabbertab" title="Risk Assessment"><!-- Risk Assessment tabbertab begin -->
+					<div id="mcPage_004" class="mcPage"><!-- page 4 begin -->
+					<span class="tabHeading">Risk Assessment</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Users &nbsp;&nbsp;&nbsp;(To be filled by Deviation Coordinator)</div>
+						
+						
+							<div id="divmastercontrol.set.DEV_DAA" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.set.DEV_DAA" class="reqdLabel">* Department Approval Authority:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.set.DEV_DAA" class="selectfield required" title="Department Approval Authority" onchange="assignUsers()"></select>
+									</div>
+
+									<div class="subLabel">
+										<label for="mastercontrol.set.DEV_QA" class="reqdLabel">* QA Lead:</label>
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.set.DEV_QA" class="selectfield required" title="QA Lead" onchange="assignUsers()"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divmastercontrol.set.DEV_Users" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="mastercontrol.set.DEV_Users" class="reqdLabel">* Deviation Lead:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select id="mastercontrol.set.DEV_Users" class="selectfield required" title="Deviation Lead" onchange="assignUsers()"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divUsers" class="hide"><!-- hidden title fields div begin -->
+									<select id="mastercontrol.route.stepusers.step1" class="selectfield" multiple="multiple" title="Step1 User"></select>
+									<select id="mastercontrol.route.stepusers.step2" class="selectfield" multiple="multiple" title="Step2 User"></select>
+									<select id="mastercontrol.route.stepusers.step3" class="selectfield" multiple="multiple" title="Step3 User"></select>
+									<select id="mastercontrol.route.stepusers.step4" class="selectfield" multiple="multiple" title="Step4 User"></select>
+									<select id="mastercontrol.route.stepusers.step5" class="selectfield" multiple="multiple" title="Step5 User"></select>
+									<select id="mastercontrol.route.stepusers.step6" class="selectfield" multiple="multiple" title="Step6 User"></select>
+									<select id="mastercontrol.route.stepusers.step7" class="selectfield" multiple="multiple" title="Step7 User"></select>
+									<select id="mastercontrol.route.stepusers.step8" class="selectfield" multiple="multiple" title="Step8 User"></select>
+									<select id="mastercontrol.route.stepusers.step9" class="selectfield" multiple="multiple" title="Step9 User"></select>
+									<select id="mastercontrol.set.Deviation Coordinator" class="selectfield " title="Deviation Coordinator"></select>
+									<select id="mastercontrol.set.GMP_Deviation Notify" class="selectfield " title="GMP_Deviation Notify" multiple="multiple"></select>
+									<select id="mastercontrol.set.GLP_Deviation Notify" class="selectfield " title="GLP_Deviation Notify" multiple="multiple"></select>
+									<select id="mastercontrol.set.GCP_Deviation Notify" class="selectfield " title="GCP_Deviation Notify" multiple="multiple"></select>	
+									<input id="mastercontrol.route.stepnumber" type="text" class="textfield" alt="Step Number" title="Step Number" />
+							</div>
+							<div class="sectionHeading">Risk Assessment &nbsp;&nbsp;&nbsp;(To be filled by QA Lead)</div>
+							<div id="divDeviationClassification" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Deviation Classification:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbDeviationClassification" name="rbDeviationClassification" type="radio" class="radiobuttonfield" alt="Deviation Classification" title="Deviation Classification" value="Major" />Major
+										<input id="rbDeviationClassification" name="rbDeviationClassification" type="radio" class="radiobuttonfield" alt="Deviation Classification" title="Deviation Classification" value="Minor" />Minor
+										<input id="rbDeviationClassification" name="rbDeviationClassification" type="radio" class="radiobuttonfield" alt="Deviation Classification" title="Deviation Classification" value="None" />None
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divIsRiskAssessmentRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" >Is Risk Assessment Required?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="rbIsRiskAssessmentRequired" name="rbIsRiskAssessmentRequired" type="radio" class="radiobuttonfield" alt="Is Risk Assessment Required?" title="Is Risk Assessment Required?" value="Yes" onclick="riskAssess()"/>Yes
+										<input id="rbIsRiskAssessmentRequired" name="rbIsRiskAssessmentRequired" type="radio" class="radiobuttonfield" alt="Is Risk Assessment Required?" title="Is Risk Assessment Required?" value="No" onclick="riskAssess()()"/>No
+									</div>
+
+									<div id="divRiskAssessment" class="hide">
+									<div class="formField34">
+										<input id="mastercontrol.risk.namedlaunch.Issue Review" type="button" class="formButton140" alt="Launch Risk Assessment" title="Launch Risk Assessment" value="Launch Risk Assessment"/>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							
+							<div id="divmastercontrol.links.add.Risk Management" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="" >View Risk Assessments:</label>
+								</div>
+								
+								<div class="leftField">
+									<div class="formField34">
+										<input id="mastercontrol.links.add.Risk Management" type="button" class="formButton140" title="Click to View Risk Assessment" value="View Risk Assessments" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+									</div>
+									<div class="formField34">
+										<select id="mastercontrol.links.Risk Management" size="3" class="textfield" alt="Issue Review" title="List of Risk Assessments" ></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							<div id="divRationale" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRationale">Rationale:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtRationale" class="textarea" rows="15" cols="20" title="Rationale" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+
+							<div id="divInvestigationRequired" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Is an Investigation Required?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield" alt="Is an Investigation Required?" title="Is an Investigation Required?" value="Yes" onclick="reference()"/>Yes
+										<input id="rbInvestigationRequired" name="rbInvestigationRequired" type="radio" class="radiobuttonfield" alt="Is an Investigation Required?" title="Is an Investigation Required?" value="No" onclick="reference()"/>No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divInvestigationReference" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInvestigationReference">Investigation Reference:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtInvestigationReference" type="text" class="textfield" alt="Investigation Reference" title="Investigation Reference" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRiskAssessmentClosureAttachments" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.riskassessmentattachments" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.riskassessmentattachments">&nbsp;</label>
+												<select id="mastercontrol.attachments.riskassessmentattachments" size="3" multiple="multiple" class="listfield readonly" alt="Risk Assessment Closure Attachments Files" title="Risk Assessment Attachment Files"></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.riskassessmentattachments" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.riskassessmentattachments">&nbsp;</label>
+												<select id="mastercontrol.links.riskassessmentattachments" size="3" multiple="multiple" class="listfield readonly" alt="Risk Assessment Attachments Links" title="Risk Assessment Attachment Links"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				
+				<div id="divInvestigationTab" class="tabbertab" title="Investigation"><!-- Investigation tabbertab begin -->
+					<div id="mcPage_005" class="mcPage"><!-- page 5 begin -->
+					<span class="tabHeading">Investigation</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation</div>
+						<div id="divInvestigationRootCause">
+							<div id="divInvestigationSummary" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtInvestigationSummary">Investigation Summary:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtInvestigationSummary" class="textarea" rows="30" cols="20" title="Investigation Summary" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						
+							<div id="divRootCause1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="RootCause1">Root Cause 1:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField25">
+										<select id="rootCause1" class="selectfield" title="Root Cause 1" onchange="rootCause()">
+										<option value=""></option>
+										<option value="Environment">Environment</option>
+										<option value="Manpower">Manpower</option>
+										<option value="Maintenance">Maintenance</option>
+										<option value="Machine">Machine</option>
+										<option value="Materials">Material</option>
+										<option value="Method">Method</option>
+										<option value="Measurement">Measurement</option>
+										<option value="Unknown">Unknown</option>
+										</select>
+									</div>	
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRationale1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRationale1" >Rationale for Root Cause 1:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtRationale1" class="textarea" rows="5" cols="20" title="Rationale for Root Cause 1" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divRootCause2" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Root Cause 2:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField25">
+										<select id="rootCause2" class="selectfield" title="Root Cause 2">
+										<option value=""> </option>
+										<option value="Manpower">Manpower</option>
+										<option value="Maintenance">Maintenance</option>
+										<option value="Environment">Environment</option>
+										<option value="Machine">Machine</option>
+										<option value="Materials">Material</option>
+										<option value="Method">Method</option>
+										<option value="Measurement">Measurement</option>
+										</select>
+									</div>	
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divRationale2" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRationale2">Rationale for Root Cause 2:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtRationale2" class="textarea" rows="5" cols="20" title="Rationale for Root Cause 2" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divRootCause3" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Root Cause 3:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField25">
+										<select id="rootCause3" class="selectfield" title="Root Cause 3">
+										<option value=""> </option>
+										<option value="Manpower">Manpower</option>
+										<option value="Maintenance">Maintenance</option>
+										<option value="Environment">Environment</option>
+										<option value="Machine">Machine</option>
+										<option value="Materials">Material</option>
+										<option value="Method">Method</option>
+										<option value="Measurement">Measurement</option>
+										</select>
+									</div>	
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divRationale3" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtRationale3">Rationale for Root Cause 3:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtRationale3" class="textarea" rows="5" cols="20" title="Rationale for Root Cause 3" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+						</div>	
+							<div id="divActionsRequiredToCloseDev" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Are Actions Required to Close Deviation?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbActionsRequiredToCloseDev" name="rbActionsRequiredToCloseDev" type="radio" class="radiobuttonfield" alt="Are Actions Required to Close Deviation?" title="Are Actions Required to Close Deviation?" value="Yes" onclick="reqActions()"/>Yes
+										<input id="rbActionsRequiredToCloseDev" name="rbActionsRequiredToCloseDev" type="radio" class="radiobuttonfield" alt="Are Actions Required to Close Deviation?" title="Are Actions Required to Close Deviation?" value="No" onclick="reqActions()"/>No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divActions1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtActions1">Actions:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtActions1" class="textarea" rows="15" cols="20" title="Actions" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+														
+							<div id="divInvestigationAttachments" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.investigationclosureattachments" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.investigationclosureattachments">&nbsp;</label>
+												<select id="mastercontrol.attachments.investigationclosureattachments" size="3" multiple="multiple" class="listfield readonly" alt="Investigation Attachments Files" title="Investigation Files"></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.investigationclosureattachments" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.investigationclosureattachments">&nbsp;</label>
+												<select id="mastercontrol.links.investigationclosureattachments" size="3" multiple="multiple" class="listfield readonly" alt="Investigation Attachments Links" title="Investigation Links"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+							
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+
+				<div id="divDeviationClosureTab" class="tabbertab" title="Deviation Closure"><!-- Deviation Closure tabbertab begin -->
+					<div id="mcPage_006" class="mcPage"><!-- page 6 begin -->
+					<span class="tabHeading">Deviation Closure</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Deviation Closure</div>
+						
+							<div id="divClosure1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Is CAPA Required?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbClosure1" name="rbClosure1" type="radio" class="radiobuttonfield" alt="Is CAPA Required?" title="Is CAPA Required?" value="Yes" onclick="closureReference(this.id)"/>Yes
+										<input id="rbClosure1" name="rbClosure1" type="radio" class="radiobuttonfield" alt="Is CAPA Required?" title="Is CAPA Required?" value="No" onclick="closureReference(this.id)"/>No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							
+							
+							<div id="divReference1" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtReference1">CAPA Reference:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtReference1" type="text" class="textfield" alt="CAPA Reference" title="CAPA Reference" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddCAPA" type="button" class="formButton115" alt="Add" title="Add CAPA Reference to List" value="Add" onclick="addCAPA()"/>
+										<input id="btnRemoveCAPA" type="button" class="formButton115" alt="Remove" title="Remove CAPA Reference from List" value="Remove" onclick="removeFromList(this.id)"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbCAPA" size="5" class="selectfield" title="CAPA References List"></select>
+									</div>
+								</div>
+								<div id="divCAPAReference" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtCAPA1" alt="List of CAPA References" title="List of CAPA References"/>
+									<input type="text" id="txtCAPA2" alt="CAPA References Added" title="CAPA References Added"/>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divClosure2" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Is NCMR Required?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbClosure2" name="rbClosure2" type="radio" class="radiobuttonfield" alt="NCMR Required?" title="Is NCMR Required?" value="Yes" onclick="closureReference(this.id)"/>Yes
+										<input id="rbClosure2" name="rbClosure2" type="radio" class="radiobuttonfield" alt="NCMR Required?" title="Is NCMR Required?" value="No" onclick="closureReference(this.id)"/>No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divReference2" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtReference2">NCMR Reference:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtReference2" type="text" class="textfield" alt="NCMR Reference" title="NCMR Reference" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divClosure3" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Is Change Control Required?:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbClosure3" name="rbClosure3" type="radio" class="radiobuttonfield" alt="Is Change Control Required?" title="Is Change Control Required?" value="Yes" onclick="closureReference(this.id)"/>Yes
+										<input id="rbClosure3" name="rbClosure3" type="radio" class="radiobuttonfield" alt="Is Change Control Required?" title="Is Change Control Required?" value="No" onclick="closureReference(this.id)"/>No
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divReference3" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtReference3">Change Control Reference:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtReference3" type="text" class="textfield" alt="Change Control Reference" title="Change Control Reference" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divClosureComments" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtClosureComments">Comments:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtClosureComments" class="textarea" rows="20" cols="20" title="Comments" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							
+							<div id="divDeviationClosureAttachments" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.deviationclosureattachments" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.deviationclosureattachments">&nbsp;</label>
+												<select id="mastercontrol.attachments.deviationclosureattachments" size="3" multiple="multiple" class="listfield readonly" alt="Deviation Closure Attachments Files" title="Deviation Closure Files"></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.deviationclosureattachments" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.deviationclosureattachments">&nbsp;</label>
+												<select id="mastercontrol.links.deviationclosureattachments" size="3" multiple="multiple" class="listfield readonly" alt="Deviation Closure Attachments Links" title="Deviation Closure Links"></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				<div id="divSignaturesTab" class="tabbertab" title="Signatures"><!-- Signatures tabbertab begin -->
+					<div id="mcPage_007" class="mcPage"><!-- page 7 begin -->
+					<span class="tabHeading">Signatures</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Deviation Initiation & Initial Impact</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step1">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step1">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step1">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step1" rows="3" readonly="readonly" class="signaturefields" title="Step1 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Initiation & Impact Approval</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step2">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step2">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step2">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step2" rows="3" readonly="readonly" class="signaturefields" title="step2 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step2" rows="3" readonly="readonly" class="signaturefields" title="step2 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step2" rows="3" readonly="readonly" class="signaturefields" title="step2 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Risk Assessment</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step3">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step3">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step3">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step3" rows="3" readonly="readonly" class="signaturefields" title="step3 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step3" rows="3" readonly="readonly" class="signaturefields" title="step3 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step3" rows="3" readonly="readonly" class="signaturefields" title="step3 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Email Notification</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step4">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step4">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step4">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step4" rows="4" readonly="readonly" class="signaturefields" title="step4 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step4" rows="4" readonly="readonly" class="signaturefields" title="step4 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step4" rows="4" readonly="readonly" class="signaturefields" title="step4 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Risk Assessment Approval</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step5">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step5">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step5">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step5" rows="3" readonly="readonly" class="signaturefields" title="step5 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step5" rows="3" readonly="readonly" class="signaturefields" title="step5 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step5" rows="3" readonly="readonly" class="signaturefields" title="step5 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step6">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step6">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step6">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step6" rows="3" readonly="readonly" class="signaturefields" title="step6 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step6" rows="3" readonly="readonly" class="signaturefields" title="step6 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step6" rows="3" readonly="readonly" class="signaturefields" title="step6 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Investigation Approval</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step7">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step7">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step7">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step7" rows="3" readonly="readonly" class="signaturefields" title="step7 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step7" rows="3" readonly="readonly" class="signaturefields" title="step7 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step7" rows="3" readonly="readonly" class="signaturefields" title="step7 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Deviation Closure</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step8">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step8">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step8">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step8" rows="3" readonly="readonly" class="signaturefields" title="step8 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step8" rows="3" readonly="readonly" class="signaturefields" title="step8 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step8" rows="3" readonly="readonly" class="signaturefields" title="step8 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+						<div class="sectionData">
+						<div class="sectionHeading">Deviation Closure Approval</div>
+							<div class="signatureData">
+								<table class="signatureTable" cellpadding="0" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col" class="signatureName">
+												<label for="mastercontrol.route.esig.users.step9">Name</label>
+											</th>
+											<th scope="col" class="signatureDate">
+												<label for="mastercontrol.route.esig.timestamps.step9">Date</label>
+											</th>
+											<th scope="col" class="signatureStatus">
+												<label for="mastercontrol.route.esig.sigstatus.step9">Signoff Status</label>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<textarea id="mastercontrol.route.esig.users.step9" rows="3" readonly="readonly" class="signaturefields" title="step9 Signoff Name"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.timestamps.step9" rows="3" readonly="readonly" class="signaturefields" title="step9 Signoff Date"></textarea>
+											</td>
+											<td>
+												<textarea id="mastercontrol.route.esig.sigstatus.step9" rows="3" readonly="readonly" class="signaturefields" title="step9 Signoff Status"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- previous section end -->
+					</div><!-- previouse page end -->
+				</div><!-- previous tabber end -->
+				
+				<div id="divHelpTab" class="tabbertab" title="Help"><!-- Help tabbertab begin -->
+				
+					<div id="mcPage_008" class="mcPage"><!-- page 8 begin -->
+							<a href="https://acceleronpharma.mastercontrol.com/mc/main/index.cfm?event=showFile&ID=EA74B90F0098A04C1C&static=false">Click for the Deviation SOP</a>
+					</div><!-- final page end -->
+				</div><!-- final tabbertab end -->
+			</div><!-- formTabs end -->
+		</div><!-- formBody end -->
+		
+		<div class="formFooter"><!-- formFooter Start -->
+			<div align="right" style="margin-top:20px;">
+				<input name="mastercontrol.changehistory" type="button" class="button" id="mastercontrol.changehistory"  Value="Change History" />
+			</div>
+		</div><!-- formFooter End -->	
+	</div><!-- container end -->
+</form><!-- form end -->
+
+
+
+<script type='text/javascript' src='tabber.js'></script>
+<script type='text/javascript' src='jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='StdLibrary.js'></script>
+<script type='text/javascript' src='Calendar.js'></script>
+
+<script language="javascript" type="text/javascript">
+
+var jQ = jQuery.noConflict();
+
+
+jQ(function() {
+	setTaskTitle();
+});
+
+
+function disableApprovePage(){
+
+	var stepNum=document.getElementById("mastercontrol.route.stepnumber").value;
+	
+	if(stepNum==2 || stepNum==5 || stepNum==7 || stepNum==9){
+		document.getElementById("txtJustification").disabled=true;
+		document.getElementById("txtInvestigationReference").disabled=true;
+		document.getElementById("txtActions1").disabled=true;
+		document.getElementById("txtReference1").disabled=true;
+		document.getElementById("txtReference2").disabled=true;
+		document.getElementById("txtReference3").disabled=true;
+	}
+	
+	else if(stepNum==1){
+		document.getElementById("txtInvestigationReference").disabled=true;
+		document.getElementById("txtActions1").disabled=true;
+		document.getElementById("txtReference1").disabled=true;
+		document.getElementById("txtReference2").disabled=true;
+		document.getElementById("txtReference3").disabled=true;
+	
+	}
+	else if(stepNum==3){
+		document.getElementById("txtJustification").disabled=true;
+		document.getElementById("txtActions1").disabled=true;
+		document.getElementById("txtReference1").disabled=true;
+		document.getElementById("txtReference2").disabled=true;
+		document.getElementById("txtReference3").disabled=true;
+	
+	}
+	else if(stepNum==6){
+		document.getElementById("txtJustification").disabled=true;
+		document.getElementById("txtInvestigationReference").disabled=true;
+		document.getElementById("txtReference1").disabled=true;
+		document.getElementById("txtReference2").disabled=true;
+		document.getElementById("txtReference3").disabled=true;
+	}
+	else if(stepNum==8){
+		document.getElementById("txtJustification").disabled=true;
+		document.getElementById("txtInvestigationReference").disabled=true;
+		document.getElementById("txtActions1").disabled=true;
+	}
+		
+}
+
+
+
+/***********************************************************
+===========================================================
+Following function would allow to enter the study number in 
+a text box and add it to a select box. Using this multiple 
+study numbers can be added into the select box. 
+
+===========================================================
+************************************************************/
+
+function addStudyNumber(){
+
+	var htmlSelect1=document.getElementById("cmbStudyNumbers1");
+	var optionDisplaytext=document.getElementById("txtStudyNumberAdd1");
+	var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = optionDisplaytext.value;
+	htmlSelect1.add(selectBoxOption);
+ 
+	document.getElementById("txtStudyNumberAdd1").value = "";
+	setPg1StudyNumber();
+}
+
+/***********************************************************
+===========================================================
+Following function would allow to enter the Lot number in 
+a text box and add it to a select list. Using this multiple 
+Lot numbers can be added into the select list. 
+
+===========================================================
+************************************************************/
+
+function addLotNumber(){
+
+	var htmlSelect1=document.getElementById("cmbLotNumbers1");
+	var optionDisplaytext=document.getElementById("txtLotNumberAdd1");
+	var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = optionDisplaytext.value;
+	htmlSelect1.add(selectBoxOption);
+ 
+	document.getElementById("txtLotNumberAdd1").value = "";
+	setLotNumber();
+}
+
+/***********************************************************
+===========================================================
+Following function would allow to select the required product
+from the list and add into the select list.Using this multiple 
+products can be added into the select list. 
+
+===========================================================
+************************************************************/
+
+function addProduct(){
+
+	var productSelect=document.getElementById("cmbProduct");
+	var productList=document.getElementById("mastercontrol.dataset.recordids.Product List");
+	var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = productList.value;
+	productSelect.add(selectBoxOption);
+	
+	for(var i=0;i<productList.options.length;i++){
+		document.getElementById("mastercontrol.dataset.recordids.Product List").options[i].selected=false;
+	}
+	
+	setProductList();
+}
+
+/***********************************************************
+===========================================================
+Following function would allow to enter the Assay number in 
+a text box and add it to a select list. Using this multiple 
+Assay numbers can be added into the select list. 
+
+===========================================================
+************************************************************/
+
+function addAssayNumber(){
+
+	var assaySelect=document.getElementById("cmbAssayTracker");
+	var assayList=document.getElementById("txtQCAssayTrackingNumber");
+	var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = assayList.value;
+	assaySelect.add(selectBoxOption);
+	document.getElementById("txtQCAssayTrackingNumber").value = "";
+ 
+	setAssayList();
+
+}
+
+
+/*******************************************************************
+====================================================================
+Following function would allow to enter the CAPA reference 
+number in a text box and add it to a select list. Using this 
+multiple CAPA reference numbers can be added into the select list. 
+
+====================================================================
+********************************************************************/
+
+function addCAPA(){
+
+	var capaSelect=document.getElementById("cmbCAPA");
+	var capaList=document.getElementById("txtReference1");
+	var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = capaList.value;
+	capaSelect.add(selectBoxOption);
+	document.getElementById("txtReference1").value = "";
+ 
+	setCAPAList();
+
+}
+
+/***********************************************************
+===========================================================
+Following function would allow to remove the item from the
+select list by selecting an item and clicking the remove 
+button.
+===========================================================
+************************************************************/
+
+function removeFromList(id){
+	switch(id) {
+		case "btnRemoveStudyNumber1":
+			var studyNo = document.getElementById("cmbStudyNumbers1");
+			studyNo.remove(studyNo.selectedIndex);
+			setPg1StudyNumber();
+			break;
+		case "btnRemoveLotNumber1":
+			var lotNo = document.getElementById("cmbLotNumbers1");
+			lotNo.remove(lotNo.selectedIndex);
+			setLotNumber();
+			break;
+		case "btnRemoveProduct1":
+			var prod = document.getElementById("cmbProduct");
+			prod.remove(prod.selectedIndex);
+			setProductList();
+			break;
+		case "btnRemoveAssay1":
+			var assay = document.getElementById("cmbAssayTracker");
+			assay.remove(assay.selectedIndex);
+			setAssayList();
+			break;
+		case "btnRemoveCAPA":
+			var capa = document.getElementById("cmbCAPA");
+			capa.remove(capa.selectedIndex);
+			setCAPAList();
+			break;
+		default:
+			break;
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function would populate the Assay Tracking Numbers
+added to the select list. This function executes only when the
+page is loaded. 
+===========================================================
+************************************************************/
+function populateAssayList(){
+
+	var assayNumbers1=document.getElementById("cmbAssayTracker");
+	var assayNumbersValue=document.getElementById("txtAssayNumberPg1");
+	
+	
+	if(assayNumbersValue !=""){
+		while(assayNumbers1.options.length){
+			assayNumbers1.remove(0);
+		}	
+	
+		var assayNumbersArray= assayNumbersValue.value.split(",");
+		for(var i=0;i<assayNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=assayNumbersArray[i];
+			opt.value=assayNumbersArray[i];
+			assayNumbers1.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store Assay Tracking Numbers
+added to the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setAssayList(){
+
+	var assayNumbers1=document.getElementById("cmbAssayTracker");
+	var assayNumbers=document.getElementById("txtAssayNumbers");
+	var assayNumbersPg1=document.getElementById("txtAssayNumberPg1");
+	
+	assayNumbers.value="";
+	var x=assayNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		assayNumbers.value +=assayNumbers1.options[i].text + ",";
+	}
+	
+	assayNumbersPg1.value=assayNumbers.value;
+
+}
+
+/**************************************************************************
+===========================================================================
+This function on page load calculates the original due date which is 
+30 days from the create date.
+===========================================================================
+***************************************************************************/
+
+function originalDueDate() {
+	var createDate= document.getElementById("mastercontrol.form.created").value;
+	var str=createDate.toString();
+    var res1 = str.slice(0,2); // retrieve the day form the create date
+	var res2= str.slice(3,6);	//retrieve the month form the create date
+	var res3 = str.slice(7,11);	 //retrieve the year form the create date
+		
+	switch(res2){
+	
+	case 'Jan':
+		res2='01';
+		break;
+	case 'Feb':
+		res2='02';
+		break;
+	case 'Mar':
+		res2='03';
+		break;
+	case 'Apr':
+		res2='04';
+		break;
+	case 'May':
+		res2='05';
+		break;
+	case 'Jun':
+		res2='06';
+		break;
+	case 'Jul':
+		res2='07';
+		break;
+	case 'Aug':
+		res2='08';
+		break;
+	case 'Sep':
+		res2='09';
+		break;
+	case 'Oct':
+		res2='10';
+		break;
+	case 'Nov':
+		res2='11';
+		break;
+	case 'Dec':
+		res2='12';
+		break;		
+	}
+	
+	var date=res2+"/"+res1+"/"+res3; // converting the create date into mm/dd/yyyy format
+	var newDate=new Date(date);
+	var dateParse = Date.parse(newDate);
+	var dateAdded = new Date(dateParse + (30*24*60*60*1000)); // adding 30 days to the create date
+	var dateNew = dateAdded.toString();
+	var newDate=new Date(dateNew);
+	var dd = newDate.getDate();
+	if (dd < 10) dd = "0" + dd;
+	var yyyy = newDate.getFullYear();
+	
+	var monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	var mmm= monthShortNames[newDate.getMonth()];
+	
+	var originalDateFormatted=dd+" "+mmm+" "+yyyy; 
+	
+	document.getElementById("txtOriginalDueDate_date").value = originalDateFormatted;
+	
+}
+
+
+
+/**************************************************************************
+===========================================================================
+Following function allows to enable and disable the Justification textarea 
+based on whether it is 'Planned' or 'Unplanned' Type
+===========================================================================
+***************************************************************************/
+
+function enableJustification(){
+
+	var typeValue= document.getElementsByName("rbType3");
+	var type_value;
+	for(var i = 0; i < typeValue.length; i++){
+ 
+		if(typeValue[i].checked){
+			
+			type_value = typeValue[i].value;
+		
+			if(type_value=="Planned"){
+				document.getElementById("txtJustification").disabled=false;
+				document.getElementById("txtJustification").style.backgroundColor="white";
+			}
+			else{
+				document.getElementById("txtJustification").disabled=true;
+				document.getElementById("txtJustification").style.backgroundColor="#C5C5C5";
+			}
+		}
+	}
+}
+
+/**************************************************************************
+===========================================================================
+Following function would show or hide the 'Launch Risk Assessment' button  
+based on 'Yes' or 'No' selected against the statement 'Is risk assessment required?'
+===========================================================================
+***************************************************************************/
+
+
+function riskAssess(){
+
+	var riskAssess= document.getElementsByName("rbIsRiskAssessmentRequired");
+	var risk;
+	for(var i = 0; i < riskAssess.length; i++){
+ 
+		if(riskAssess[i].checked){
+			risk = riskAssess[i].value;		
+			if(risk=="Yes"){
+			
+				document.getElementById("divRiskAssessment").style.display='block';
+				document.getElementById("divRiskAssessment").style.visibility='visible';
+			}
+			else{
+				document.getElementById("divRiskAssessment").style.display='none';
+			}
+		}
+		
+	}
+}
+
+/**************************************************************************
+===========================================================================
+Following function would enable or disable the CAPA , NCMR & Change Control
+reference based on Yes or No answered to the corresponding field.
+===========================================================================
+***************************************************************************/
+
+function closureReference(id){
+	for(var j=1;j<=3;j++){
+		refer_type="rbClosure"+j;
+		var refer=document.getElementsByName("rbClosure"+j);
+		
+		if(id==refer_type){
+		
+			for(var i = 0; i < refer.length; i++){
+				if(refer[i].checked){
+					var refer_value = refer[i].value;
+		
+					if(refer_value=="Yes"){
+						document.getElementById("txtReference"+j).disabled=false;
+						document.getElementById("txtReference"+j).style.backgroundColor = "white";
+					}
+					else{
+						document.getElementById("txtReference"+j).disabled=true;
+						document.getElementById("txtReference"+j).style.backgroundColor = "#C5C5C5";
+					}
+				}
+			}
+		}
+	}
+}
+
+/**************************************************************************
+===========================================================================
+The following function would enable or disable the "Investigation reference" 
+field upon chosing of Yes or No and also hide the Investigation summary and 
+root cause details in tab 4
+===========================================================================
+***************************************************************************/
+
+function reference(){
+	var invest= document.getElementsByName("rbInvestigationRequired");
+	var invest_status;
+	for(var i = 0; i < invest.length; i++){
+ 
+		if(invest[i].checked){
+			invest_status = invest[i].value;		
+			if(invest_status=="Yes"){
+				document.getElementById("txtInvestigationReference").disabled=false;
+				document.getElementById("txtInvestigationReference").style.backgroundColor = "white";
+				document.getElementById("divInvestigationRootCause").style.display = 'block';
+				document.getElementById("divInvestigationRootCause").style.visibility = 'visible';
+				
+			}
+			else{
+				document.getElementById("txtInvestigationReference").value="";
+				document.getElementById("txtInvestigationReference").disabled=true;
+				document.getElementById("txtInvestigationReference").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtInvestigationSummary").value="";
+				document.getElementById("txtRationale1").value="";
+				document.getElementById("txtRationale2").value="";
+				document.getElementById("txtRationale3").value="";
+				document.getElementById("divInvestigationRootCause").style.display = 'none';
+				
+			}
+		}
+	}
+}
+
+/**************************************************************************
+===========================================================================
+The following function would enable or disable the text area for Actions
+based on 'Yes' or 'No' selected to the question "Are actions required to close
+the deviation?"
+===========================================================================
+***************************************************************************/
+
+function reqActions(){
+	var action= document.getElementsByName("rbActionsRequiredToCloseDev");
+	var action_status;
+	for(var i = 0; i < action.length; i++){
+ 
+		if(action[i].checked){
+			action_status = action[i].value;		
+			if(action_status=="Yes"){
+				document.getElementById("txtActions1").disabled=false;
+				document.getElementById("txtActions1").style.backgroundColor = "white";	
+			}
+			else{
+				document.getElementById("txtActions1").disabled=true;
+				document.getElementById("txtActions1").style.backgroundColor = "#C5C5C5";	
+			}
+		}
+	}
+}
+
+
+/*****************************************************************
+==================================================================
+Following function would populate Study Numbers added to the 
+select list. This function executes only when the page is loaded. 
+==================================================================
+******************************************************************/
+
+function populateStudyNumber(){
+
+	var studyNumbers1=document.getElementById("cmbStudyNumbers1");
+	var studyNumbersValue=document.getElementById("txtStudyNumberPg1");
+	
+	
+	if(studyNumbersValue !=""){
+		while(studyNumbers1.options.length){
+			studyNumbers1.remove(0);
+		}	
+	
+		var studyNumbersArray= studyNumbersValue.value.split(",");
+		for(var i=0;i<studyNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=studyNumbersArray[i];
+			opt.value=studyNumbersArray[i];
+			studyNumbers1.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store the study numbers added
+to the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setPg1StudyNumber(){
+
+	var studyNumbers1=document.getElementById("cmbStudyNumbers1");
+	var studyNumbers=document.getElementById("txtStudyNumbers");
+	var studyNumbersPg1=document.getElementById("txtStudyNumberPg1");
+	
+	studyNumbers.value="";
+	var x=studyNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		studyNumbers.value +=studyNumbers1.options[i].text + ",";
+	}
+	
+	studyNumbersPg1.value=studyNumbers.value;
+
+}
+
+/**********************************************************************
+======================================================================
+Following function is used to add dates from the 'New Due Date' text box
+to the List box using the Add button.
+======================================================================
+***********************************************************************/
+
+function addDueDate(){
+
+	var origDueDate=document.getElementById("txtOriginalDueDate_date").value;
+	var origDueDateFormat= new Date(origDueDate);
+	var newDueDate=document.getElementById("txtNewDueDate_date").value;
+	var newDueDateFormat= new Date(newDueDate);
+		
+	if(Date.parse(newDueDateFormat) < Date.parse(origDueDateFormat)){
+		alert(" New Due Date should be later than Original Due Date");
+	}
+	else{
+		var dateSelect=document.getElementById("cmbNewDueDate");
+		var date=document.getElementById("txtNewDueDate_date");
+		var selectOption = document.createElement("option");
+ 
+		selectOption.text = date.value;
+		dateSelect.add(selectOption);
+
+		setDueDateList();
+	}   
+
+	
+}
+
+/***********************************************************
+===========================================================
+Following function is used delete the 'New Due Dates' added to
+the list box by using the remove button.
+===========================================================
+************************************************************/
+
+function removeDueDate(){
+	var dueDate = document.getElementById("cmbNewDueDate");
+	dueDate.remove(dueDate.selectedIndex);
+	setDueDateList();
+}
+
+
+/***********************************************************
+===========================================================
+Following function would populate New Due Dates added to the 
+select list. This function executes only when the page is loaded. 
+===========================================================
+************************************************************/
+
+function populateDueDateList(){
+
+	var dueDates_List=document.getElementById("cmbNewDueDate");
+	var dueDatesValue=document.getElementById("txtDueDatesPg1");
+	
+	
+	if(dueDatesValue !=""){
+		while(dueDates_List.options.length){
+			dueDates_List.remove(0);
+		}	
+	
+		var dueDatesArray= dueDatesValue.value.split(",");
+		for(var i=0;i<dueDatesArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=dueDatesArray[i];
+			opt.value=dueDatesArray[i];
+			dueDates_List.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store New Due Dates added to
+the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setDueDateList(){
+
+	var dueDatesList=document.getElementById("cmbNewDueDate");
+	var dueDates=document.getElementById("txtDueDates");
+	var dueDatesPg1=document.getElementById("txtDueDatesPg1");
+	
+	dueDates.value="";
+	var x=dueDatesList.options.length;
+	
+	for(var i=0;i<x;i++){
+		dueDates.value +=dueDatesList.options[i].text + ",";
+	}
+	
+	dueDatesPg1.value=dueDates.value;
+
+}
+
+/****************************************************************
+=================================================================
+Following function would populate Products added to the 
+select list. This function executes only when the page is loaded. 
+=================================================================
+*****************************************************************/
+
+function populateProductList(){
+
+	var product_List=document.getElementById("cmbProduct");
+	var productValue=document.getElementById("txtProductPg1");
+	
+	if(productValue !=""){
+		while(product_List.options.length){
+			product_List.remove(0);
+		}	
+	
+		var productArray= productValue.value.split(",");
+		for(var i=0;i<productArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=productArray[i];
+			opt.value=productArray[i];
+			product_List.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store products added to
+the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setProductList(){
+
+	var prodsList=document.getElementById("cmbProduct");
+	var prods=document.getElementById("txtProduct");
+	var prodsPg1=document.getElementById("txtProductPg1");
+	
+	prods.value="";
+	var x=prodsList.options.length;
+	
+	for(var i=0;i<x;i++){
+		prods.value +=prodsList.options[i].text + ",";
+	}
+	
+	prodsPg1.value=prods.value;
+
+}
+
+/*****************************************************************
+=================================================================
+Following function would populate Lot Numbers added to the 
+select list. This function executes only when the page is loaded. 
+=================================================================
+*****************************************************************/
+
+function populateLotNumber(){
+
+	var lotNumbers1=document.getElementById("cmbLotNumbers1");
+	var lotNumbersValue=document.getElementById("txtLotNumberPg1");
+	
+	
+	if(lotNumbersValue !=""){
+		while(lotNumbers1.options.length){
+			lotNumbers1.remove(0);
+		}	
+	
+		var lotNumbersArray= lotNumbersValue.value.split(",");
+		for(var i=0;i<lotNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=lotNumbersArray[i];
+			opt.value=lotNumbersArray[i];
+			lotNumbers1.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store Lot Numbers added to
+the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setLotNumber(){
+
+	var lotNumbers1=document.getElementById("cmbLotNumbers1");
+	var lotNumbers=document.getElementById("txtLotNumbers");
+	var lotNumbersPg1=document.getElementById("txtLotNumberPg1");
+	
+	lotNumbers.value="";
+	var x=lotNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		lotNumbers.value +=lotNumbers1.options[i].text + ",";
+	}
+	
+	lotNumbersPg1.value=lotNumbers.value;
+}
+
+/****************************************************************
+=================================================================
+Following function would populate CAPA References added to the 
+select list. This function executes only when the page is loaded. 
+=================================================================
+*****************************************************************/
+
+function populateCAPAList(){
+
+	var capaNumbers1=document.getElementById("cmbCAPA");
+	var capaNumbersValue=document.getElementById("txtCAPA1");
+	
+	
+	if(capaNumbersValue !=""){
+		while(capaNumbers1.options.length){
+			capaNumbers1.remove(0);
+		}	
+	
+		var capaNumbersArray= capaNumbersValue.value.split(",");
+		for(var i=0;i<capaNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=capaNumbersArray[i];
+			opt.value=capaNumbersArray[i];
+			capaNumbers1.appendChild(opt);	
+		}
+	}
+}
+
+/***********************************************************
+===========================================================
+Following function is used to store CAPA References added
+the list to a text box which are seperated by a comma
+===========================================================
+************************************************************/
+
+function setCAPAList(){
+
+	var capaNumbers1=document.getElementById("cmbCAPA");
+	var capaNumbers=document.getElementById("txtCAPA2");
+	var capaNumbersPg1=document.getElementById("txtCAPA1");
+	
+	capaNumbers.value="";
+	var x=capaNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		capaNumbers.value +=capaNumbers1.options[i].text + ",";
+	}
+	
+	capaNumbersPg1.value=capaNumbers.value;
+
+}
+
+/**************************************************************************
+===========================================================================
+The following function executes when page is loaded. This method checks if the 
+due date extensions are more than new due dates or not and if the extensions 
+are more then the New Due Date calendar button is enabled else disabled. 
+===========================================================================
+***************************************************************************/
+
+function dueDateBtn(){
+
+	var dates=document.getElementById("cmbNewDueDate").length;
+	var extns=document.getElementById("mastercontrol.links.Deviation Extension").length;
+
+	if(extns>dates){
+		document.getElementById("btnNewDueDateCalendar").disabled=false;
+	}
+
+	else{ 
+		document.getElementById("btnNewDueDateCalendar").disabled=true;
+	}
+}
+
+/**************************************************************************
+===========================================================================
+This function would show or hide the option to select vendor based on option 
+selecetd as 'Yes' or 'No'. If 'Yes' is selected and Add Vendor is checekd
+text box to enter the vendor name populates. 
+===========================================================================
+***************************************************************************/
+
+
+
+/********commenting the code related to vendor as it is affecting the page load
+
+function vendor(){
+
+	var vendorAsso= document.getElementsByName("rbVendorAssociated1");
+	var vendorAsso_value;
+	for(var i = 0; i < vendorAsso.length; i++){
+ 
+		if(vendorAsso[i].checked){
+			vendorAsso_value = vendorAsso[i].value;
+		
+			if(vendorAsso_value=="Yes"){	
+				document.getElementById("divVendorList").style.display='block';
+				document.getElementById("divVendorList").style.visibility='visible';
+				document.getElementById("divAddVendor").style.display='block';
+				document.getElementById("divAddVendor").style.visibility='visible';
+				document.getElementById("divOtherVendor").style.display='none';	
+				var cb=document.getElementById("cbAddVendor").checked;
+				
+				if(cb){
+					document.getElementById("divVendorList").style.display='none';	
+					document.getElementById("divOtherVendor").style.display='block';
+					document.getElementById("divOtherVendor").style.visibility='visible';
+				}
+				else{
+					document.getElementById("divVendorList").style.display='block';
+					document.getElementById("divVendorList").style.visibility='visible';
+					document.getElementById("divOtherVendor").style.display='none';
+				}
+			}
+			else{
+				document.getElementById("divVendorList").style.display='none';
+				document.getElementById("divAddVendor").style.display='none';
+				document.getElementById("divOtherVendor").style.display='none';
+				document.getElementById("cbAddVendor").checked=false;
+			}
+		}
+	}
+}
+****************************End of Vendor Code******************************/
+
+/**************************************************************************
+===========================================================================
+The following function would display or hide Root Cause and Rationale if the 
+Root Cause1 is selected as 'Unknown'
+===========================================================================
+***************************************************************************/
+
+function rootCause(){
+
+	var value=document.getElementById("rootCause1").value;
+
+	if(value=='Unknown'){
+		document.getElementById("divRootCause2").style.display='none';
+		document.getElementById("divRationale2").style.display='none';
+		document.getElementById("divRootCause3").style.display='none';
+		document.getElementById("divRationale3").style.display='none';	
+	}
+	else{
+		document.getElementById("divRootCause2").style.display='block';
+		document.getElementById("divRootCause2").style.visibility='visible';
+		document.getElementById("divRationale2").style.display='block';
+		document.getElementById("divRationale2").style.visibility='visible';
+		document.getElementById("divRootCause3").style.display='block';
+		document.getElementById("divRootCause3").style.visibility='visible';
+		document.getElementById("divRationale3").style.display='block';
+		document.getElementById("divRationale3").style.visibility='visible';
+	}
+}
+
+/**************************************************************************
+===========================================================================
+This function would add GMP,GLP or GCP users to the step 4 users to send them
+an email notification based on the type selected under the field 'Type' in tab 1.
+===========================================================================
+***************************************************************************/
+
+function notifyUsers(){
+
+	var type= document.getElementsByName("rbType2");
+	var type_value;
+	
+	for(var i = 0; i < type.length; i++){
+		if(type[i].checked){
+			type_value = type[i].value;
+			
+			switch(type_value){
+				case "GMP":
+					
+					var user=document.getElementById("mastercontrol.set.GMP_Deviation Notify");
+					var stepusers4= document.getElementById("mastercontrol.route.stepusers.step4");
+						for(l=0; l<stepusers4.options.length; l++){	
+							stepusers4.options[l].selected = false;		
+						}
+						for (var j=0; j<stepusers4.options.length; j++) {
+							var k=0;
+							for( ;k<user.options.length; k++){
+								if(stepusers4.options[j].text===user.options[k].text){
+									stepusers4.options[j].selected = true;
+								}
+							}
+						}
+				break;
+				case "GLP":
+					var user=document.getElementById("mastercontrol.set.GLP_Deviation Notify");
+					var stepusers4= document.getElementById("mastercontrol.route.stepusers.step4");
+						for(l=0; l<stepusers4.options.length; l++){
+							stepusers4.options[l].selected = false;	
+						}
+						for (var j=0; j<stepusers4.options.length; j++) {
+							var k=0;
+							for(; k<user.options.length; k++){
+								if(stepusers4.options[j].text==user.options[k].text){
+									stepusers4.options[j].selected = true;	
+								}
+							}
+						}
+				break;
+				
+				case "GCP":
+					var user=document.getElementById("mastercontrol.set.GCP_Deviation Notify");
+					var stepusers4= document.getElementById("mastercontrol.route.stepusers.step4");
+						for(l=0; l<stepusers4.options.length; l++){
+							stepusers4.options[l].selected = false;	
+						}
+						for (var j=0; j<stepusers4.options.length; j++) {
+							var k=0;
+							for(; k<user.options.length; k++){
+								if(stepusers4.options[j].text==user.options[k].text){
+									stepusers4.options[j].selected = true;	
+								}
+							}
+						}
+				break;
+			}
+		}			
+	}	
+}
+
+/**************************************************************************
+===========================================================================
+This function would add users to corresponding steps based on the selections
+made for Department Approval Authority, Deviation Lead and QA Lead.
+===========================================================================
+***************************************************************************/
+
+function assignUsers(){
+	
+	var DevQA = document.getElementById("mastercontrol.set.DEV_QA").value;
+	var DevDAA = document.getElementById("mastercontrol.set.DEV_DAA").value;
+	var DevLead = document.getElementById("mastercontrol.set.DEV_Users").value;
+	var DevCoor = document.getElementById("mastercontrol.set.Deviation Coordinator").value;
+		
+	document.getElementById("mastercontrol.route.stepusers.step5").value=DevQA;
+	document.getElementById("mastercontrol.route.stepusers.step6").value=DevLead;
+	document.getElementById("mastercontrol.route.stepusers.step8").value=DevLead;
+	document.getElementById("mastercontrol.route.stepusers.step9").value=DevQA;
+	
+	var users1=[];
+	users1[0] = DevDAA;	
+	users1[1]= DevQA;
+	
+	var users2=[];
+	users2[0]=DevCoor;
+	users2[1]=DevQA
+	
+	if(users1 !=""){
+		
+		var stepusers7=document.getElementById("mastercontrol.route.stepusers.step7");
+		while(stepusers7.options.length){
+			stepusers7.remove(0);	//delete all the existing users from the list
+		}
+
+		for(var i=0;i<users1.length;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=users1[i];
+			opt.value=users1[i];
+			stepusers7.appendChild(opt);	//adding the DAA and QA lead to step 7
+		}
+			
+		for (var j=0; j<stepusers7.options.length; j++) {		//to select all users in step7
+			stepusers7.options[j].selected = true;
+		}	
+	}
+	
+	if(users2 !=""){
+		
+		var stepusers3=document.getElementById("mastercontrol.route.stepusers.step3");
+		while(stepusers3.options.length){
+			stepusers3.remove(0);	//delete all the existing users from the list
+		}
+
+		for(var i=0;i<users2.length;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=users2[i];
+			opt.value=users2[i];
+			stepusers3.appendChild(opt);	//adding the deviation coordinator and QA Lead to step 3 users
+		}
+			
+		for (var j=0; j<stepusers3.options.length; j++) {		//to select all users in step3
+			stepusers3.options[j].selected = true;
+		}	
+	}
+}
+
+
+
+/**************************************************************************
+===========================================================================
+The following function executes every time when page is loaded. The Deviation
+Extension request route is set in this function. The other functions which
+needs to be executed during page load are also included in this function.
+===========================================================================
+***************************************************************************/
+
+function devRequestLaunch(){
+
+	var listLength = document.getElementById("mastercontrol.task.routes").options.length;
+
+	for(var i=0;i<listLength;i++){	
+		var routeName = document.getElementById("mastercontrol.task.routes").options[i].text;
+		if(routeName== "Deviation Extension"){
+			document.getElementById("mastercontrol.task.routes").selectedIndex ="i";
+			document.getElementById("mastercontrol.task.routes").options[i].selected=true;
+		}
+	}
+	
+	for(var j=1;j<=3;j++){
+		var refer=document.getElementsByName("rbClosure"+j);
+		for(var i = 0; i < refer.length; i++){
+			if(refer[i].checked){
+				var refer_value = refer[i].value;
+		
+				if(refer_value=="Yes"){
+					document.getElementById("txtReference"+j).disabled=false;
+					document.getElementById("txtReference"+j).style.backgroundColor = "white";
+				}
+				else{
+					document.getElementById("txtReference"+j).disabled=true;
+					document.getElementById("txtReference"+j).style.backgroundColor = "#C5C5C5";
+				}
+			}
+		}
+	}
+	
+	var productList=document.getElementById("mastercontrol.dataset.recordids.Product List");
+	for(var i=0;i<productList.options.length;i++){
+		document.getElementById("mastercontrol.dataset.recordids.Product List").options[i].selected=false;
+	}
+	
+	originalDueDate();
+	populateStudyNumber();
+	populateDueDateList();
+	populateProductList();
+	populateLotNumber();
+	populateAssayList();
+	populateCAPAList();
+	dueDateBtn();
+	//vendor(); 
+	enableJustification();
+	reference();
+	riskAssess();
+	reqActions();
+	rootCause();
+	assignUsers();
+	notifyUsers();
+	disableApprovePage();
+	
+}
+
+/***************************************************************************************************************
+================================================================================================================
+Taken from 
+http://www.htmlgoodies.com/beyond/javascript/article.php/3724571/Using-Multiple-JavaScript-Onload-Functions.htm
+================================================================================================================
+***************************************************************************************************************/
+
+function addLoadEvent(func) {
+	var oldonload = window.onload; 
+	if (typeof window.onload != 'function') { 
+	    window.onload = func; 
+	} 
+	else { 
+		window.onload = function() { 
+			if (oldonload) { 
+				oldonload(); 
+			} 
+			func(); 
+	    } 
+	} 
+} 
+
+/**********************************************************
+===========================================================
+This functions adds devRequestLaunch to window.onload event 
+so it will load after the document is finished loading  
+**********************************************************
+===========================================================*/
+addLoadEvent(devRequestLaunch); 
+
+</script>

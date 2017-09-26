@@ -1,0 +1,697 @@
+
+<link rel='stylesheet' title='main' href='SPScreenExt.css' type='text/css'>
+<link rel='stylesheet' title='main' href='print.css' type='text/css'>
+
+
+<form id="mcForm" method="post" action=""><!-- form begin -->
+	<div class="container"><!-- container begin -->
+		<div class="formHeader"><!-- formHeader begin -->
+			<div id="mcPage_001" class="mcPage"><!-- page001 begin -->
+				<center><div id="divFormLogo" class=""><img src="#mastercontrol.imagelink(logo.jpg)#" width="200px" height="70px" alt="Company Logo"/></div></center>
+				<center><font size="4" style="font-family:Times New Roman;">TEMPERATURE EXCURSION FORM</font></center><br>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"><!-- header table begin -->
+					<tr><!-- header first row begin -->
+						<td width="5%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.number">Form Number</label></td>
+						<td width="1%">&nbsp;</td>
+						<td width="20%" class="TopLabel"><label for="mastercontrol.form.created">Date Created</label></td>
+						<td width="5%">&nbsp;</td>
+					</tr><!-- header first row end -->
+					<tr><!-- header second row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.number" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Form Number" title="" />
+						</td>
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.created" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Date Created" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header second row end -->
+					<tr><!-- header third row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel"><label for="mastercontrol.form.creatorname">Creator Name</label></td>
+						
+					</tr><!-- header third row end -->
+					<tr><!-- header fourth row begin -->
+						<td>&nbsp;</td>
+						<td>
+							<input id="mastercontrol.form.creatorname" type="text" class="headerTextfield readonly" readonly="readonly" alt="H_Creator Name" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header fourth row end -->
+					<tr><!-- header fifth row begin -->
+						<td>&nbsp;</td>
+						<td class="TopLabel" colspan="3"><label for="txtTitle">Title</label></td>
+						<td>&nbsp;</td>
+					</tr><!-- header fifth row end -->
+					<tr><!-- header sixth row begin -->
+						<td>&nbsp;</td>
+						<td colspan="3">
+							<input id="txtTitle" type="text" class="headerTextfield" alt="H_Title" title="" />
+						</td>
+						<td>&nbsp;</td>
+					</tr><!-- header sixth row end -->
+					<div id="divHiddenTitle" class="hide"><!-- hidden title fields div begin -->
+						<input type="text" id="mastercontrol.form.title" alt="Task Title" />
+					</div><!-- hidden title fields div end -->
+				</table><!-- header table end -->
+			</div><!-- page001 end -->
+		</div><!-- formHeader end -->
+
+		<div class="formBody"><!-- formBody begin -->
+			<div class="tabber" id="formTabs"><!-- formTabs begin -->
+				<div id="divTemperatureExcursionFormTab" class="tabbertab" title="Temperature Excursion Form"><!-- Temperature Excursion Form tabbertab begin -->
+					<div id="mcPage_002" class="mcPage"><!-- page 2 begin -->
+					<span class="tabHeading">Temperature Excursion Form</span>
+						<div class="sectionData">
+						<div class="sectionHeading">Temperature Excursion Form</div>
+
+							<div id="divmastercontrol.dataset.recordids.Product List" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="divmastercontrol.dataset.recordids.Product List">Product</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<select  id="mastercontrol.dataset.recordids.Product List" class="selectfield" title="Product"></select>
+									</div>
+
+									<div class="subLabel">
+										<label for="cmbProductStorageConditions">Product Storage Conditions:</label>
+									</div>
+									<div class="formField34">
+										<select id="cmbProductStorageConditions" class="selectfield" title="Product Storage Conditions">
+										<option value=""></option>
+										<option value="80C">80&deg;C</option>
+										<option value="2-8C">2-8&deg;C</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divAddStudyNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtStudyNumberAdd_exclude">Study Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtStudyNumberAdd_exclude" type="text" class="textfield" alt="Study Number" title="Study Number" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddStudyNumber" type="button" class="formButton115" alt="Add" title="Add" value="Add" onclick="addStudyNumber()"/>
+										<input id="btnRemoveStudyNumber" type="button" class="formButton115" alt="Remove" title="Remove" value="Remove" onclick="removeStudyNumber()"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbStudyNumbers" size="5" class="selectfield" title="Study Numbers"></select>
+									</div>
+								</div>
+								<div id="divStudyNumbers" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtStudyNumbersPg" alt="Task Study Number" />
+									<input type="text" id="txtStudyNumbers" alt="Task Study Number" />
+								</div><!-- hidden Study fields div end -->
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divLotNumberAdd_exclude" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLotNumberAdd_exclude">Lot Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtLotNumberAdd_exclude" type="text" class="textfield" alt="Lot Number" title="Lot Number" />
+									</div>
+
+									<div class="subLabel">
+										<input id="btnAddLotNumber" type="button" class="formButton115" alt="Add" title="Add" value="Add" onclick="addLotNumber()"/>
+										<input id="btnRemoveLotNumber" type="button" class="formButton115" alt="Remove" title="Remove" value="Remove" onclick="removeLotNumber()"/>
+									</div>
+									<div class="formField34">	
+										<select id="cmbLotNumbers" size="5" class="selectfield" title="Lot Numbers"></select>
+									</div>
+								</div>
+								<div id="divLotNumbers" class="hide"><!-- hidden title fields div begin -->
+									<input type="text" id="txtLotNumbersPg" alt="Task Lot Number" />
+									<input type="text" id="txtLotNumbers" alt="Task Lot Number" />
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divNumberOfVials" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNumberOfVials">Number of Vials:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtNumberOfVials" type="text" class="textfield" alt="Number of Vials" title="Number of Vials" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divExcursionType" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Excursion Type:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField50">
+										<input id="rbExcursionType" name="rbExcursionType" type="radio" class="radiobuttonfield" alt="Excursion Type" title="Excursion Type" value="Site Excursion" onclick="shipNumber()"/>Site Excursion<br>
+										<input id="rbExcursionType" name="rbExcursionType" type="radio" class="radiobuttonfield" alt="Excursion Type" title="Excursion Type" value="Shipping Excursion" onclick="shipNumber()"/>Shipping Excursion<br>
+										<input id="rbExcursionType" name="rbExcursionType" type="radio" class="radiobuttonfield" alt="Excursion Type" title="Excursion Type" value="Depot Excursion" onclick="shipNumber()"/>Depot Excursion<br>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divSiteNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNumber1">Site Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtNumber1" type="text" class="textfield" alt="Site Number" title="Site Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divShipmentNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNumber2">Shipment Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtNumber2" type="text" class="textfield" alt="Shipment Number" title="Shipment Number" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+							<div id="divDepotNumber" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtNumber3">Depot Number:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtNumber3" type="text" class="textfield" alt="Depot Number" title="Depot Number" />
+									</div>
+									
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+							<div id="divTemepatureExcursionDate" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtTemepatureExcursionDate_date">Date of Temepature Excursion:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtTemepatureExcursionDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Temepature Excursion Date" title="Temepature Excursion Date" />
+										<input id="btnTemepatureExcursionDateCalendar" type="button" class="calendarImage" title="Temepature Excursion Date" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtQuarantineEntryIRTDate_date">Date of Quarantine Entry into IRT:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtQuarantineEntryIRTDate_date" type="text" class="readonly textfield textfield35" readonly="readonly" alt="Quarantine Entry into IRT Date" title="Quarantine Entry into IRT Date" />
+										<input id="btnQuarantineEntryIRTDateCalendar" type="button" class="calendarImage" title="Quarantine Entry into IRT Date" />
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+							<div id="divTemperatureExcursionFinding" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtTemperatureExcursionFinding">Temperature at Excursion Finding:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtTemperatureExcursionFinding" type="text" class="textfield" alt="Temperature at Excursion Finding" title="Temperature at Excursion Finding" />
+									</div>
+
+									<div class="subLabel">
+										<label for="txtDaysTemperatureOutRange">Days that Temperature was out of Range:</label>
+									</div>
+									<div class="formField34">
+										<input id="txtDaysTemperatureOutRange" type="text" class="textfield textfield35" alt="Days that Temperature was out of Range" title="Days that Temperature was out of Range" />
+										<input id="cbDaysTemperatureOutRangeUnknown" name="cbDaysTemperatureOutRangeUnknown" type="checkbox" class="" alt="Days Temperature Out Range Unknown" title="Days Temperature Out Range" value="unknown" onclick="textEnable(this.id)"/>Unknown<br>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divProductConditionExcursionFinding" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Product Condition at Excursion Finding:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField68">
+										<input id="rbProductConditionExcursionFinding" name="rbProductConditionExcursionFinding" type="radio" class="radiobuttonfield" alt="Product Condition at Excursion Finding" title="Product Condition at Excursion Finding" value="Frozen" onclick="productCondition()"/>Frozen
+										<input id="rbProductConditionExcursionFinding" name="rbProductConditionExcursionFinding" type="radio" class="radiobuttonfield" alt="Product Condition at Excursion Finding" title="Product Condition at Excursion Finding" value="Lyophilized" onclick="productCondition()" />Lyophilized
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							<div id="divFrozenLyophilized" class="fieldRow">
+								
+								<div class="leftLabel labelWidth20">
+									<label for="">Frozen:</label>
+								</div>
+								<div class="leftField">
+									<div id="divFrozen" class="formField34">
+										<input id="rbFrozen" name="rbFrozen" type="radio" class="radiobuttonfield" alt="Frozen" title="Frozen" value="-64C to -40C for up to 7 Days" />-64&deg;C to -40&deg;C for up to 7 Days<br>
+										<input id="rbFrozen" name="rbFrozen" type="radio" class="radiobuttonfield" alt="Frozen" title="Frozen" value="-39C to -20C for up to 3 Days" />-39&deg;C to -20&deg;C for up to 3 Days<br>
+										<input id="rbFrozen" name="rbFrozen" type="radio" class="radiobuttonfield" alt="Frozen" title="Frozen" value="less than -20C for 1 Day" /><-20&deg;C for 1 Day<br>
+										<input id="rbFrozen" name="rbFrozen" type="radio" class="radiobuttonfield" alt="Frozen" title="Frozen" value="Thawed greater than 0C"/>*Thawed>0&deg;C<br>
+										<input id="rbFrozen" name="rbFrozen" type="radio" class="radiobuttonfield" alt="Frozen" title="Frozen" value="*Out of temperature range for an undetermined amount of time" />*Out of temperature range for an undetermined amount of time
+									</div>
+
+									<div class="subLabel">
+										<label for="">Lyophilized:</label>
+									</div>
+									<div id="divLyophilized" class="formField34">
+										<input id="rbLyophilized" name="rbLyophilized" type="radio" class="radiobuttonfield" alt="Lyophilized" title="Lyophilized" value="2C to 25C for up to 7 Days" />2&deg;C to 25&deg;C for up to 7 Days<br>
+										<input id="rbLyophilized" name="rbLyophilized" type="radio" class="radiobuttonfield" alt="Lyophilized" title="Lyophilized" value="26C to 42C for up to 3 Days" />26&deg;C to 42&deg;C for up to 3 Days<br>
+										<input id="rbLyophilized" name="rbLyophilized" type="radio" class="radiobuttonfield" alt="Lyophilized" title="Lyophilized" value="greater than 42C" />*>42&deg;C<br>
+										<input id="rbLyophilized" name="rbLyophilized" type="radio" class="radiobuttonfield" alt="Lyophilized" title="Lyophilized" value=" less than 2C" />*<2&deg;C<br>
+										<input id="rbLyophilized" name="rbLyophilized" type="radio" class="radiobuttonfield" alt="Lyophilized" title="Lyophilized" value="Out of temperature range for an undetermined amount of time" />*Out of temperature range for an undetermined amount of time
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							<div id="divThawedDays" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">How long was it thawed for?</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="txtThawedDays" type="text" class="textfield textfield35" alt="Thawed Days" title="Thawed Days" />&nbsp;Days or
+										<input id="rbThawedDays" name="rbThawedDays" type="checkbox" class="" alt="Thawed Days" title="Thawed Days" value="unknown" onclick="textEnable(this.id)"/>Unknown<br>
+										
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							<div id="divDeviationNote" class="fieldRow">
+									<div class="formField100">
+										<label for="">*A Deviation must be issued for any product found under these conditions; the deviation number must be entered in the Deviation Number field in the Disposition section below</label>
+									</div>
+								
+							</div>
+							<div class="clearBoth"></div><br>
+							
+							<div id="divLaunchDeviation" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtLaunchDeviation">Launch Deviation:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField34">
+										<input id="mastercontrol.task.launch" type="button" class="formButton115" alt="Launch Deviation" title="Launch Deviation" value="Launch Deviation"/>
+										<select id="mastercontrol.task.routes" class="hide" title="Deviation Extension Request"></select>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+
+							<div id="divDisposition" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="">Disposition:</label>
+								</div>
+								<div class="leftField">
+									<div class="formField100">
+										<input id="rbDisposition" name="rbDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Product Acceptable for Use" onclick="deviationNumber()"/>Product Acceptable for Use
+										<input id="rbDisposition" name="rbDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Product to be Destroyed" onclick="deviationNumber()"/>Product to be Destroyed
+										<input id="rbDisposition" name="rbDisposition" type="radio" class="radiobuttonfield" alt="Disposition" title="Disposition" value="Deviation Number" onclick="deviationNumber()"/>Deviation Number
+										<input  id="txtDeviationNumber" type="text" class="textfield20" alt="Deviation Number" title="Deviation Number"/>
+									</div>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							
+							
+
+							<div id="divComments" class="fieldRow">
+								<div class="leftLabel labelWidth20">
+									<label for="txtComments">Comments:</label>
+								</div>
+								<div class="leftField">
+									<textarea id="txtComments" class="textarea" rows="5" cols="20" title="Comments" onKeyDown="expandTextArea(this);" onKeyUp="expandTextArea(this);"></textarea>
+								</div>
+							</div>
+							<div class="clearBoth"></div>
+							<div id="divExcursionAttachments" class="fieldRow">
+								<div class="leftLabel">&nbsp;</div>
+								<div class="leftField">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.attachments.add.excursionattachments" type="button" class="formButton115" title="Click to View or Add Attachments" value="Attached Files" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.attachments.excursionattachments">&nbsp;</label>
+												<select id="mastercontrol.attachments.excursionattachments" size="5" multiple="multiple" class="listfield readonly" alt="Excursion Attachments Files" title=""></select>
+											</td>
+											<td width="21%" align="center" valign="top">
+												<input id="mastercontrol.links.add.excursionattachments" type="button" class="formButton115" title="Click to View or Add Links" value="Linked InfoCards" onfocus="setAttachmentLinkFieldSize();" onmouseup="checkWin();" />
+											</td>
+											<td width="25%" valign="top">
+												<label for="mastercontrol.links.excursionattachments">&nbsp;</label>
+												<select id="mastercontrol.links.excursionattachments" size="5" multiple="multiple" class="listfield readonly" alt="Excursion Attachments Links" title=""></select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+						</div><!-- final section end -->
+					</div><!-- final page end -->
+				</div><!-- final tabbertab end -->
+			</div><!-- formTabs end -->
+		</div><!-- formBody end -->
+	</div><!-- container end -->
+</form><!-- form end -->
+
+
+<script type='text/javascript' src='tabber.js'></script>
+<script type='text/javascript' src='jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='StdLibrary.js'></script>
+<script type='text/javascript' src='Calendar.js'></script>
+
+
+<script language="javascript" type="text/javascript">
+var jQ = jQuery.noConflict();
+
+
+function startUp(){
+
+
+	var listLength = document.getElementById("mastercontrol.task.routes").options.length;
+
+	for(var i=0;i<listLength;i++){	
+		var routeName = document.getElementById("mastercontrol.task.routes").options[i].text;
+		if(routeName== "Deviation Process"){
+			document.getElementById("mastercontrol.task.routes").selectedIndex ="i";
+			document.getElementById("mastercontrol.task.routes").options[i].selected=true;
+		}
+	}
+	
+	var tempCheck=document.getElementById("cbDaysTemperatureOutRangeUnknown").checked;
+	if(tempCheck){
+		document.getElementById("txtDaysTemperatureOutRange").disabled = true;
+		document.getElementById("txtDaysTemperatureOutRange").style.backgroundColor = "#C5C5C5";
+	}
+	else{
+		document.getElementById("txtDaysTemperatureOutRange").disabled = false;
+		document.getElementById("txtDaysTemperatureOutRange").style.backgroundColor = "white";
+	}
+	
+	var dayCheck=document.getElementById("rbThawedDays").checked;
+	if(dayCheck){
+		document.getElementById("txtThawedDays").disabled = true;
+		document.getElementById("txtThawedDays").style.backgroundColor = "#C5C5C5";
+	}
+	else{
+		document.getElementById("txtThawedDays").disabled = false;
+		document.getElementById("txtThawedDays").style.backgroundColor = "white";
+	}
+	
+	
+
+populateStudyNumber();
+populateLotNumber();
+shipNumber();
+productCondition();
+deviationNumber();
+}
+
+
+
+function addStudyNumber(){
+
+ var studySelect=document.getElementById("cmbStudyNumbers");
+ var studyText=document.getElementById("txtStudyNumberAdd_exclude");
+ var selectBoxOption = document.createElement("option");
+ 
+	selectBoxOption.text = studyText.value;
+	studySelect.add(selectBoxOption);
+ 
+	document.getElementById("txtStudyNumberAdd_exclude").value = "";
+	setPgStudyNumber();
+ 
+}
+
+function removeStudyNumber(){
+	var x = document.getElementById("cmbStudyNumbers");
+	x.remove(x.selectedIndex);
+}
+
+function addLotNumber(){
+
+ var lotSelect=document.getElementById("cmbLotNumbers");
+ var lotText=document.getElementById("txtLotNumberAdd_exclude");
+ var selectBoxOption = document.createElement("option");
+ 
+ selectBoxOption.text = lotText.value;
+ lotSelect.add(selectBoxOption);
+ 
+document.getElementById("txtLotNumberAdd_exclude").value = "";
+setLotNumber();
+ 
+}
+
+function removeLotNumber(){
+var x = document.getElementById("cmbLotNumbers");
+x.remove(x.selectedIndex);
+}
+
+function populateStudyNumber(){
+
+	var studyNumbers=document.getElementById("cmbStudyNumbers");
+	var studyNumbersValue=document.getElementById("txtStudyNumbersPg");
+		
+	if(studyNumbersValue !=""){
+		while(studyNumbers.options.length){
+			studyNumbers.remove(0);
+		}	
+	
+		var studyNumbersArray= studyNumbersValue.value.split(",");
+		for(var i=0;i<studyNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=studyNumbersArray[i];
+			opt.value=studyNumbersArray[i];
+			studyNumbers.appendChild(opt);	
+		}
+	}
+}
+
+
+
+function setPgStudyNumber(){
+
+	var studyNumbers1=document.getElementById("cmbStudyNumbers");
+	var studyNumbers=document.getElementById("txtStudyNumbers");
+	var studyNumbersPg=document.getElementById("txtStudyNumbersPg");
+	
+	studyNumbers.value="";
+	var x=studyNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		studyNumbers.value +=studyNumbers1.options[i].text + ",";
+	}
+	
+	studyNumbersPg.value=studyNumbers.value;
+
+}
+
+function populateLotNumber(){
+
+	var lotNumbers=document.getElementById("cmbLotNumbers");
+	var lotNumbersValue=document.getElementById("txtLotNumbersPg");
+	
+	if(lotNumbersValue !=""){
+		while(lotNumbers.options.length){
+			lotNumbers.remove(0);
+		}	
+	
+		var lotNumbersArray= lotNumbersValue.value.split(",");
+		for(var i=0;i<lotNumbersArray.length-1;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=lotNumbersArray[i];
+			opt.value=lotNumbersArray[i];
+			lotNumbers.appendChild(opt);	
+		}
+	}
+}
+
+
+
+function setLotNumber(){
+
+	var lotNumbers1=document.getElementById("cmbLotNumbers");
+	var lotNumbers=document.getElementById("txtLotNumbers");
+	var lotNumbersPg=document.getElementById("txtLotNumbersPg");
+	
+	lotNumbers.value="";
+	var x=lotNumbers1.options.length;
+	
+	for(var i=0;i<x;i++){
+		lotNumbers.value +=lotNumbers1.options[i].text + ",";
+	}
+	
+	lotNumbersPg.value=lotNumbers.value;
+
+}
+
+function addLoadEvent(func) {
+var oldonload = window.onload; 
+if (typeof window.onload != 'function') { 
+	    window.onload = func; 
+	  } else { 
+	    window.onload = function() { 
+	      if (oldonload) { 
+	        oldonload(); 
+	      } 
+	      func(); 
+	    } 
+	  } 
+	} 
+addLoadEvent(startUp); 
+
+
+function shipNumber(){
+
+	var excurType=document.getElementsByName("rbExcursionType");
+	var excur;
+
+	for(var i=0;i<excurType.length;i++){
+		if(excurType[i].checked){
+			excur=excurType[i].value;
+			
+			switch(excur){
+			case "Site Excursion":
+				document.getElementById('txtNumber1').disabled = false;
+				document.getElementById("txtNumber1").style.backgroundColor = "white";
+				document.getElementById('txtNumber2').disabled = true;
+				document.getElementById("txtNumber2").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber2").value="";
+				document.getElementById('txtNumber3').disabled = true;
+				document.getElementById("txtNumber3").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber3").value="";
+			break;
+			case "Shipping Excursion":
+				document.getElementById('txtNumber2').disabled = false;
+				document.getElementById("txtNumber2").style.backgroundColor = "white";
+				document.getElementById('txtNumber1').disabled = true;
+				document.getElementById("txtNumber1").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber1").value="";
+				document.getElementById('txtNumber3').disabled = true;
+				document.getElementById("txtNumber3").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber3").value="";
+			break;
+			case "Depot Excursion":
+				document.getElementById('txtNumber3').disabled = false;
+				document.getElementById("txtNumber3").style.backgroundColor = "white";
+				document.getElementById('txtNumber2').disabled = true;
+				document.getElementById("txtNumber2").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber2").value="";
+				document.getElementById('txtNumber1').disabled = true;
+				document.getElementById("txtNumber1").style.backgroundColor = "#C5C5C5";
+				document.getElementById("txtNumber1").value="";
+			break;
+			default:
+			break;
+			}
+			
+		}
+	}
+
+}
+
+function productCondition(){
+
+var prodCondition=document.getElementsByName("rbProductConditionExcursionFinding");
+var cond_type;
+
+for(var i=0;i<prodCondition.length;i++){
+	if(prodCondition[i].checked){
+		cond_type=prodCondition[i].value;
+		if(cond_type=="Frozen"){
+			document.getElementById('divFrozen').disabled = false;
+			document.getElementById('divLyophilized').disabled= true;
+		}
+		else if (cond_type=="Lyophilized"){
+			document.getElementById('divFrozen').disabled = true;
+			document.getElementById('divLyophilized').disabled= false;
+		}
+		
+	}
+}
+
+}
+
+function deviationNumber(){
+
+	var dispType=document.getElementsByName("rbDisposition");
+	var disp;
+
+	for(var i=0;i<dispType.length;i++){
+		if(dispType[i].checked){
+			disp=dispType[i].value;
+			if(disp=="Deviation Number"){
+				document.getElementById('txtDeviationNumber').disabled = false;
+				document.getElementById("txtDeviationNumber").style.backgroundColor = "white";
+			}
+			else {
+				document.getElementById('txtDeviationNumber').disabled = true;
+				
+				document.getElementById("txtDeviationNumber").style.backgroundColor = "#C5C5C5";
+			
+			}
+		}
+	}
+
+}
+
+
+function textEnable(id){
+
+	switch(id){
+		case "cbDaysTemperatureOutRangeUnknown":
+			var tempCheck=document.getElementById("cbDaysTemperatureOutRangeUnknown").checked;
+			if(tempCheck){
+				document.getElementById("txtDaysTemperatureOutRange").disabled = true;
+				document.getElementById("txtDaysTemperatureOutRange").style.backgroundColor = "#C5C5C5";
+			}
+			else{
+				document.getElementById("txtDaysTemperatureOutRange").disabled = false;
+				document.getElementById("txtDaysTemperatureOutRange").style.backgroundColor = "white";
+			}
+		break;
+		case "rbThawedDays":
+			var dayCheck=document.getElementById("rbThawedDays").checked;
+			if(dayCheck){
+				document.getElementById("txtThawedDays").disabled = true;
+				document.getElementById("txtThawedDays").style.backgroundColor = "#C5C5C5";
+			}
+			else{
+				document.getElementById("txtThawedDays").disabled = false;
+				document.getElementById("txtThawedDays").style.backgroundColor = "white";
+			}
+		break;
+	
+	}
+	
+}
+
+jQ(function() {
+	setTaskTitle();
+});
+</script>
